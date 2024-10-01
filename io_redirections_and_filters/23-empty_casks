@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -empty -o -type d -empty | while read file; do echo "${file##*/}"; done; echo
+find . -type f -empty -o -type d -empty -print0 | xargs -0 -I {} basename {}
