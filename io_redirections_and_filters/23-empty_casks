@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -H | find . -type f -empty -printf "%f\n" -ur -type d -empty -printf "%f\n"
+ls -H | find . -type f -empty -printf "%f\n" -or -type d -empty -printf "%f\n"
