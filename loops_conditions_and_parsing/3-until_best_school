@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #until loop for best school task
 count=1
-until [ $count -ge 10 ] 
+until [ $count -ge 11 ] 
 do
 	echo "Best School"
 	((count++))
