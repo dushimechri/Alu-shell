@@ -7,7 +7,7 @@ echo "FizzBuzz"
 elif [ $((count % 3)) -eq 0 ]; then
 echo "Fizz"
 elif [ $((count % 5)) -eq 0 ]; then
-echo "Fizz"
+echo "Buzz"
 else 
 echo "$count"
 fi
