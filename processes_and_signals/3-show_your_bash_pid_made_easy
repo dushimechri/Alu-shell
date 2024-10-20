@@ -4,10 +4,11 @@
 # Get the list of bash processes
 output=$(pgrep -l bash)
 
-# Check if there are any matching processes
-if [[ -z "$output" ]]; then
-    echo "No processes found containing 'bash'."
+# Check if there are any matching processes and suppress output
+if [[ -n "$output" ]]; then
+    # Do nothing if there are matches
+    :
 else
-    echo "$output"
+    echo "No processes found containing 'bash'."
 fi
  
