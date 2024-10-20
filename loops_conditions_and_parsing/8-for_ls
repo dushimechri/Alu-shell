@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
-#a Bash script that displays.The content of the current directory, In a list format Where only the part of the name after the first dash is displayed
+#a Bash script that displays
+#The content of the current directory
+#In a list format
+#Where only the part of the name after the first dash is displayed
 
-#let's first loop the content of the current directory
-
-for item in *;do
-	if [[ -e $item && $item != .* ]]; then
-		name="${item#*-}"
-		if [[ $item != "$name" ]]; then
-			echo "$name"
-	  	fi
-	fi
+list=$(ls)
+for i in $list ; do
+	echo "$i" | cut -d '-' -f 2
 done
