@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 # Bash script that displays the content of the file /etc/passwd, using the while loop + IFS.
+# Get the current username
 username=$(whoami)
+
+# Read the /etc/passwd file line by line
 while IFS=: read -r user pass uid gid info home shell; do
-if [ "$user" == "$username" ]; then
-echo "The user $username is part of the $gid gang, lives $home  and rides $shell. User ID's place is protected by the passcode $pass, more info aboutthe user here: $uid  $info"
-fi
-done < /etc/passwd
+    # Check if the user matches the current username
+    if [ "$user" == "$username" ]; then
+        # Print the user information in the specified format
+        echo "The user $username is part of the $gid gang, lives in $home and rides $shell. User ID's place is protected by the passcode $pass, more info about the user here: $uid $info"
+    fi
+done < /etc/passwd  # Redirect the contents of /etc/passwd to the while loop
+
