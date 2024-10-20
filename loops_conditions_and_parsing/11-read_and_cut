@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#Bash script that displays the content of the file /etc/pas
+
+# Get the current username
+current_user=$(whoami)
+
+# Read the /etc/passwd file line by line
+while IFS=: read -r user _ uid _ _ home _; do
+    # Check if the user matches the current user
+    if [[ "$user" == "$current_user" ]]; then
+        echo "Username: $user"
+        echo "User ID: $uid"
+        echo "Home Directory: $home"
+    fi
+done < /etc/passwd
+
